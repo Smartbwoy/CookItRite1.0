@@ -1,7 +1,9 @@
 package elevizion.cookitrite.com
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_login.*
 
 /**
  * A login screen that offers login via email/password.
@@ -15,6 +17,14 @@ class LoginActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+
+        createaccount_button.setOnClickListener {
+            val intent = Intent(applicationContext, sign_up_activity::class.java)
+            startActivity(intent)
+            //finish()
+        }
         /*// Set up the login form.
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->

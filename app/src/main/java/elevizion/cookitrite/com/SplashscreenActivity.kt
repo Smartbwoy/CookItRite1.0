@@ -35,7 +35,7 @@ class SplashscreenActivity : AppCompatActivity() {
        val myThread = object : Thread() {
             override fun run() {
                 try {
-                    Thread.sleep(1000)
+                    Thread.sleep(1500)
                     val intent = Intent(applicationContext, LoginActivity::class.java)
                     startActivity(intent)
                     finish()

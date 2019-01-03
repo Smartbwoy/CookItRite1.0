@@ -12,7 +12,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/bkimage"
-            android:contentDescription="TODO"/>
+            android:contentDescription="logo"/>
     <!-- Login progress -->
     <ProgressBar
             android:id="@+id/login_progress"
@@ -26,8 +26,7 @@
             android:id="@+id/login_form"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bkcolor"
-            android:paddingTop="35dp">
+            android:paddingTop="35dp" android:background="@drawable/bkcolor">
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -61,16 +60,18 @@
                             android:id="@+id/input_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Email Address"
+                            android:hint="email_address"
                             android:inputType="textEmailAddress"
-                            android:textColor="@android:color/white"/>
+                            android:textColor="@android:color/white"
+                            android:importantForAutofill="no"/>
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginTop="8dp">
+                        android:layout_marginTop="8dp" app:hintEnabled="true" app:hintAnimationEnabled="true"
+                >
 
                     <EditText
                             android:id="@+id/password"
@@ -78,7 +79,11 @@
                             android:layout_height="wrap_content"
                             android:hint="Password"
                             android:inputType="textPassword"
-                            android:textColor="@android:color/white"/>
+                            android:textColor="@android:color/white"
+                            android:singleLine="false"
+                            android:importantForAutofill="no"
+                            tools:ignore="UnusedAttribute"
+                            android:password="true"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView
                         android:id="@+id/pass_forget"
@@ -87,29 +92,51 @@
                         android:text="Forgot Password? Click Here"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
-                        android:textSize="14sp">
+                        android:textSize="14sp" android:textStyle="bold|italic">
 
                 </TextView>
-                <Button
-                        android:id="@+id/meal_pic_button"
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@color/colorPrimary"
-                        android:clickable="true"
-                        android:elevation="24dp"
-                        android:padding="12dp"
-                        android:shadowColor="@android:color/darker_gray"
-                        android:text="Login"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@android:color/white"
-                        android:focusable="true"
-                        tools:targetApi="lollipop" />
+                        android:layout_height="0dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginBottom="60dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                    <Button
+                            android:id="@+id/login_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:clickable="true"
+                            android:elevation="24dp"
+                            android:shadowColor="@android:color/darker_gray"
+                            android:text="Login"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:focusable="true"
+                            android:layout_marginRight="40dp"
+                            tools:ignore="UnusedAttribute"
+                            android:layout_marginEnd="40dp"/>
+                    <Button
+                            android:id="@+id/createaccount_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:clickable="true"
+                            android:elevation="24dp"
+                            android:shadowColor="@android:color/darker_gray"
+                            android:text="Sign Up"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"
+                            android:focusable="true"
+                            android:layout_marginLeft="40dp"
+                            tools:ignore="UnusedAttribute"
+                            android:layout_marginStart="40dp"/>
 
+                </LinearLayout>
                 <TextView
                         android:id="@+id/textView8"
                         android:layout_width="match_parent"
@@ -138,9 +165,9 @@
                         android:layout_marginRight="12dp"
                         android:background="#416BC1"
                         android:elevation="24dp"
-                        android:text="FaceBook"
+                        android:text="Facebook"
                         android:textColor="#ffffff"
-                        android:textStyle="bold" tools:targetApi="lollipop"/>
+                        android:textStyle="bold" tools:targetApi="lollipop" android:layout_marginEnd="12dp"/>
 
                 <Button
                         android:id="@+id/gmail"
@@ -149,9 +176,9 @@
                         android:layout_marginRight="12dp"
                         android:background="#ff4343"
                         android:elevation="24dp"
-                        android:text="Google+"
+                        android:text="Google"
                         android:textColor="#ffffff"
-                        android:textStyle="bold" tools:targetApi="lollipop" android:layout_marginEnd="12dp" />
+                        android:textStyle="bold" tools:targetApi="lollipop" android:layout_marginEnd="12dp"/>
 
                 <Button
                         android:id="@+id/twitt"
@@ -165,36 +192,19 @@
 
             </LinearLayout>
 
-            <Button
+            <TextView
                     android:id="@+id/guessSignIn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Contiune as  a Guest"
+                    android:text="Contiune as a guest"
                     android:textAlignment="center"
-                    android:textAllCaps="true"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold|italic" android:background="@android:color/transparent"/>
+                    android:textStyle="bold|italic"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="20dp"/>
 
-            <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fitsSystemWindows="true">
-
-                <Button
-                        android:id="@+id/createaccount_button"
-                        style="?metaButtonBarButtonStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Create Account Click Here"
-                        android:textAlignment="center"
-                        android:textAllCaps="false"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-            </FrameLayout>
         </LinearLayout>
 
     </ScrollView>

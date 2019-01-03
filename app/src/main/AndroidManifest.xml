@@ -33,8 +33,22 @@
         <activity
                 android:name=".LoginActivity"
                 android:label="@string/title_activity_login"
-                android:theme="@style/AppTheme.NoActionBar">>
-
+                android:theme="@style/AppTheme.NoActionBar">
+            >
+        </activity>
+        <activity
+                android:name=".sign_up_activity"
+                android:label="@string/title_activity_sign_up_activity"
+                android:parentActivityName=".LoginActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="elevizion.cookitrite.com.LoginActivity"/>
+        </activity>
+        <activity
+                android:name=".ProfileActivity"
+                android:label="@string/title_activity_profile"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
