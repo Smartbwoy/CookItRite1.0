@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val intent = Intent(this, SplashscreenActivity::class.java)
+        val intent = Intent(this, MapsActivity::class.java)
         startActivity(intent)
         //setContentView(R.layout.activity_splashscreen)
         /*setSupportActionBar(toolbar)
