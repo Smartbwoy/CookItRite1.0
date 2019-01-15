@@ -8,5 +8,10 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/app_bar_profile"
         tools:context=".ProfileActivity">
-
+    <FrameLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/containerView">
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

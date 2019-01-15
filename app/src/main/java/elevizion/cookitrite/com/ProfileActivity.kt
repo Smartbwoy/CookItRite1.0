@@ -1,8 +1,11 @@
 package elevizion.cookitrite.com
 
+import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -12,16 +15,22 @@ import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.app_bar_profile.*
 
 class ProfileActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    internal lateinit var mFragmentManager: FragmentManager
+    internal lateinit var mFragmentTransaction: FragmentTransaction
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         setSupportActionBar(toolbar)
+        mFragmentManager = supportFragmentManager
+        mFragmentTransaction = mFragmentManager.beginTransaction()
+        mFragmentTransaction.replace(R.id.containerView, TabFragment()).commit()
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
@@ -82,4 +91,10 @@ class ProfileActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        fun onFragmentInteraction(uri: Uri)
+    }
+
 }

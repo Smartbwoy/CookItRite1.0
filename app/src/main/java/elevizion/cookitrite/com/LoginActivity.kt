@@ -25,6 +25,12 @@ class LoginActivity : AppCompatActivity(){
             startActivity(intent)
             //finish()
         }
+        login_button.setOnClickListener{
+            //val intent=Intent(applicationContext, ProfileActivity::class.java)
+            val intent=Intent(applicationContext, ProfileActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         /*// Set up the login form.
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->
@@ -37,6 +43,7 @@ class LoginActivity : AppCompatActivity(){
 
         btn_login.setOnClickListener { attemptLogin() }*/
     }
+
 /* private fun populateAutoComplete() {
         if (!mayRequestContacts()) {
             return

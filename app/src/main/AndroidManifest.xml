@@ -73,6 +73,11 @@
                 android:name=".MapsActivity"
                 android:label="Resturant Locations">
         </activity>
+        <activity
+                android:name=".MainTabingActivity"
+                android:label="@string/title_activity_main_tabing"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
