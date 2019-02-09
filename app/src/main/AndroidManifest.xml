@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="elevizion.cookitrite.com">
-
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -25,6 +23,14 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity
+                android:name=".CreateMealsActivity.Ingredients_Methods"
+                android:label="@string/title_activity_ingredients__methods"
+                android:parentActivityName=".CreateMealsActivity.CreateMealActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="elevizion.cookitrite.com.CreateMealsActivity.CreateMealActivity"/>
+        </activity>
         <activity
                 android:name=".SplashscreenActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
@@ -45,7 +51,7 @@
                 android:name=".LoginActivity"
                 android:label="@string/title_activity_login"
                 android:theme="@style/AppTheme.NoActionBar">
-                    </activity>
+        </activity>
         <activity
                 android:name=".sign_up_activity"
                 android:label="@string/title_activity_sign_up_activity"
@@ -79,12 +85,14 @@
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="elevizion.cookitrite.com.ProfileActivity"/>
         </activity>
-        <activity android:name=".CreateMealsActivity.CreateMealActivity"
-                  android:label="Create Recipe">
+        <activity
+                android:name=".CreateMealsActivity.CreateMealActivity"
+                android:label="Create Recipe">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="elevizion.cookitrite.com.ProfileActivity"/>
         </activity>
+
         <provider
                 android:name="android.support.v4.content.FileProvider"
                 android:authorities="com.example.android.fileprovider"
@@ -93,7 +101,6 @@
             <meta-data
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/file_path">
-
             </meta-data>
         </provider>
     </application>

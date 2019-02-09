@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CreateMealsActivity.Ingredients_Methods"
+        android:scrollbars="horizontal">
+
+    <LinearLayout
+            android:id="@+id/section_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary">
+
+        <TextView
+                android:id="@+id/ingredient_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:text="Enter Ingredients"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                <EditText
+                        android:id="@+id/ing_quty"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"/>
+
+                <Spinner
+                        android:id="@+id/measuretype_spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:popupBackground="@color/colorPrimary"
+                        android:textColor="@android:color/white"/>
+
+                <EditText
+                        android:id="@+id/ingr_name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:hint="Enter Ingredient Name"
+                        android:inputType="textCapSentences|textPersonName"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Button
+                android:id="@+id/add_ingr_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:elevation="24dp"
+                android:shadowColor="@android:color/darker_gray"
+                android:text="Add Ingredient"
+                android:textColor="@color/colorPrimary"/>
+
+        <ListView
+                android:id="@+id/ingrlist"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="horizontal"
+                tools:layout_editor_absoluteX="673dp"></ListView>
+
+        <TextView
+                android:id="@+id/method_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:text="Enter Methods"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADD METHOD STEP BY STEP"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="italic"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                <EditText
+                        android:id="@+id/methodText"
+                        android:layout_width="match_parent"
+                        android:layout_height="160sp"
+                        android:autofillHints=""
+                        android:ems="10"
+                        android:gravity="top"
+                        android:hint="Enter Method Step"
+                        android:inputType="text|textAutoCorrect|textMultiLine"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Button
+                android:id="@+id/method_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:elevation="24dp"
+                android:shadowColor="@android:color/darker_gray"
+                android:text="Add Method"
+                android:textColor="@color/colorPrimary"/>
+
+        <ListView
+                android:id="@+id/methodlist"
+                android:layout_width="match_parent"
+                android:layout_height="195dp"
+                android:scrollbars="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                tools:layout_editor_absoluteX="673dp"></ListView>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

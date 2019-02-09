@@ -45,4 +45,8 @@
     <string name="enter_recipe_name">Enter Recipe Name</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
+    <string name="added_this_meal">added this meal</string>
+    <string name="username">Username</string>
+    <string name="listed_recipes_for_user">Listed Recipes For User</string>
+    <string name="title_activity_ingredients__methods">Enter Ingredients and Methods</string>
 </resources>

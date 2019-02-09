@@ -1,14 +1,22 @@
 package elevizion.cookitrite.com.TabMenuItems
 
 import android.content.Context
+import android.graphics.Point
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import elevizion.cookitrite.com.CreateMealsActivity.MealListAdapter
+import elevizion.cookitrite.com.Enities.Recipe
 
 import elevizion.cookitrite.com.R
+import java.util.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,7 +51,31 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        val rootView = inflater.inflate(R.layout.fragment_home, container, false)
+        val rv = rootView.findViewById<RecyclerView>(R.id.recom_meal)
+        //rv.setHasFixedSize(true);
+        val wm = rootView.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val display = wm.defaultDisplay
+        val size = Point()
+        display.getSize(size)
+        val width = size.x
+        val height = size.y
+        val llm: RecyclerView.LayoutManager
+        llm = if (width <= 1500) {
+            LinearLayoutManager(rootView.context)
+        } else {
+            StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        }
+
+        //RecyclerView.LayoutManager llm = new LinearLayoutManager(rootView.getContext());
+        rv.layoutManager = llm
+        val recipes = ArrayList<Recipe>()
+        recipes.add(Recipe("ACKEE & Salt Fish", "Miguel"))
+        recipes.add(Recipe("Mango Recipe", "Oshane"))
+        recipes.add(Recipe("Apple", "Jackson"))
+        rv.adapter = MealListAdapter(recipes)
+        return rootView
     }
 
     // TODO: Rename method, update argument and hook method into UI event

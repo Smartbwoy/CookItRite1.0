@@ -2,16 +2,12 @@ package elevizion.cookitrite.com.CreateMealsActivity
 
 import android.Manifest.permission.CAMERA
 import android.Manifest.permission.READ_EXTERNAL_STORAGE
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.*
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -19,17 +15,18 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AlertDialog
-import android.view.View
-import android.view.animation.DecelerateInterpolator
-import android.widget.ImageView
+import android.support.v7.app.AppCompatActivity
+import android.text.TextUtils
 import android.widget.Toast
 import elevizion.cookitrite.com.R
 import kotlinx.android.synthetic.main.activity_create_meal.*
+import kotlinx.android.synthetic.main.recipe_pic_name.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS", "UNUSED_EXPRESSION")
 class CreateMealActivity : AppCompatActivity() {
     private val REQUEST_CAPTURE_IMAGE = 1
     private val REQUEST_SELECT_IMAGE_IN_ALBUM = 10
@@ -43,6 +40,22 @@ class CreateMealActivity : AppCompatActivity() {
         meal_pic_button.setOnClickListener{
             showPictureDialog()
         }
+        // set on-click listener
+        next_button.setOnClickListener {
+            // your code to perform when the user clicks on the button
+            //Check if recipe input field is empty
+            if (TextUtils.isEmpty(recipeName.text.toString())) {
+                recipeName.error = "Enter the name of the recipe"
+            }
+            else if(recipeName.length()<6){
+                recipeName.error = "Recipe name must have a minimum of 6 character"
+            }
+            else {
+                //val intent = Intent(this, Ingredients_Methods::class.java)
+                //startActivity(intent)
+            }
+        }
+
     }
 
     private fun showPictureDialog(){
@@ -50,7 +63,7 @@ class CreateMealActivity : AppCompatActivity() {
         lateinit var dialog: AlertDialog
         val builder = android.support.v7.app.AlertDialog.Builder(this)
         builder.setTitle("Select Action")
-        builder.setItems(items){dialog, which ->
+        builder.setItems(items){ _, which ->
             //Toast.makeText(applicationContext, items[which] + " is clicked", Toast.LENGTH_SHORT).show()
             if(items.indexOf(items[which])==0){
                 if (checkPersmission()) selectImageInAlbum() else requestPermission()
@@ -131,7 +144,7 @@ class CreateMealActivity : AppCompatActivity() {
         if (requestCode == REQUEST_CAPTURE_IMAGE && resultCode == Activity.RESULT_OK) {
 
             //To get the File for further usage
-            val auxFile = File(mCurrentPhotoPath)
+            //val auxFile = File(mCurrentPhotoPath)
 
 
             var bitmap : Bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath)
