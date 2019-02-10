@@ -2,7 +2,7 @@
 
     <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
+            xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="15dp">
@@ -46,7 +46,11 @@
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
                         android:popupBackground="@color/colorPrimary"
-                        android:textColor="@android:color/white" />
+                        android:textColor="@android:color/white"
+                        android:spinnerMode="dropdown"
+                        android:textStyle="bold"
+                        android:dropDownWidth="wrap_content"
+                        android:entries="@array/Measure_type"/>
 
                 <EditText
                         android:id="@+id/ingr_name_text"
@@ -63,29 +67,28 @@
 
         </RelativeLayout>
 
-        <Button
-                android:id="@+id/add_ingr_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/colorPrimary"
-                android:clickable="true"
-                android:elevation="24dp"
-                android:shadowColor="@android:color/darker_gray"
-                android:text="Add Ingredient"
-                android:textColor="@android:color/white"
-        />
+    <Button
+            android:id="@+id/add_ingr_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:elevation="24dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:text="Add Ingredient"
+            android:textColor="@color/colorPrimary"/>
 
-        <ListView
-                android:id="@+id/ingrlist"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
-                android:scrollbars="horizontal"></ListView>
+    <ListView
+            android:id="@+id/ingrlist"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:scrollbars="horizontal"></ListView>
 
         <TextView
                 android:id="@+id/method_title"
@@ -139,18 +142,18 @@
 
         </RelativeLayout>
 
-        <Button
-                android:id="@+id/method_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/colorPrimary"
-                android:clickable="true"
-                android:elevation="24dp"
-                android:shadowColor="@android:color/darker_gray"
-                android:text="Add Method"
-                android:textColor="@android:color/white"/>
+   <!-- <Button
+            android:id="@+id/method_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:elevation="24dp"
+            android:shadowColor="@android:color/darker_gray"
+            android:text="Add Method"
+            android:textColor="@color/colorPrimary"/>
 
         <ListView
                 android:id="@+id/methodlist"
@@ -160,6 +163,6 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"/>-->
 
     </LinearLayout>

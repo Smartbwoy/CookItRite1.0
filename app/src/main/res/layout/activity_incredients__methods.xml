@@ -43,7 +43,7 @@
                         android:layout_height="wrap_content"
                         android:autofillHints=""
                         android:ems="10"
-                        android:inputType="number"
+                        android:inputType="number|numberDecimal"
                         android:textAlignment="center"
                         android:textColor="@android:color/white"
                         android:textSize="18sp"/>
@@ -93,7 +93,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="20dp"
                 android:scrollbars="horizontal"
-                tools:layout_editor_absoluteX="673dp"></ListView>
+                tools:layout_editor_absoluteX="673dp" android:headerDividersEnabled="false"
+                android:footerDividersEnabled="false" style="@style/Widget.AppCompat.ListView"></ListView>
 
         <TextView
                 android:id="@+id/method_title"

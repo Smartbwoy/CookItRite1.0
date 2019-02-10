@@ -49,4 +49,17 @@
     <string name="username">Username</string>
     <string name="listed_recipes_for_user">Listed Recipes For User</string>
     <string name="title_activity_ingredients__methods">Enter Ingredients and Methods</string>
+
+    <string-array name="Measure_type">
+        <item>cup</item>
+        <item>lb</item>
+        <item>gram</item>
+        <item>kg</item>
+        <item>liter</item>
+        <item>ml</item>
+        <item>oz</item>
+        <item>pint</item>
+        <item>tsp</item>
+        <item>tbsp</item>
+    </string-array>
 </resources>

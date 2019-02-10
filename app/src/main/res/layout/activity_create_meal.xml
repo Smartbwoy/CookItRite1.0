@@ -14,10 +14,111 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-        <include layout="@layout/recipe_pic_name" android:visibility="gone"/>
-        <include layout="@layout/ingredients_methods"/>
+        <!--<include layout="@layout/recipe_pic_name" android:visibility="gone"/>
+        <include layout="@layout/ingredients_methods" android:visibility="gone"/>-->
 
+        <TextView
+                android:id="@+id/mealName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/enter_recipe_name"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+        <EditText
+                android:id="@+id/recipeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColorHighlight="@android:color/black"
+                android:textColorLink="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" tools:targetApi="o"
+                android:singleLine="false" android:selectAllOnFocus="false" android:background="@android:color/white"
+                android:layout_marginLeft="20dp" android:layout_marginRight="20dp"/>
 
+        <TextView
+                android:id="@+id/ingredient_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="Enter Ingredients"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"/>
+        <EditText
+                android:id="@+id/ingredient_Text"
+                android:layout_width="match_parent"
+                android:layout_height="160sp"
+                android:autofillHints=""
+                android:ems="10"
+                android:gravity="top"
+                android:hint="2 1/2 cup brown sugar (one per line)"
+                android:inputType="text|textAutoCorrect|textMultiLine"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/white"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/method_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="0dp"
+                android:text="Enter Methods"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="ADD METHOD STEP BY STEP"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="italic"/>
+        <EditText
+                android:id="@+id/methodText"
+                android:layout_width="match_parent"
+                android:background="@android:color/white"
+                android:layout_height="160sp"
+                android:autofillHints=""
+                android:ems="10"
+                android:gravity="top"
+                android:hint="Enter Methods"
+                android:inputType="text|textAutoCorrect|textMultiLine"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="18sp"/>
 
 
         <RelativeLayout
@@ -50,6 +151,25 @@
                     android:elevation="24dp"
                     android:shadowColor="@android:color/darker_gray"
                     android:text="@string/next"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:focusable="true"
+                    tools:targetApi="lollipop"
+                    android:visibility="gone"/>
+            <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:background="@android:color/white"
+                    android:clickable="true"
+                    android:elevation="24dp"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:text="Save Recipe"
                     android:textColor="@color/colorPrimary"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"

@@ -26,7 +26,8 @@
         <activity
                 android:name=".CreateMealsActivity.Ingredients_Methods"
                 android:label="@string/title_activity_ingredients__methods"
-                android:parentActivityName=".CreateMealsActivity.CreateMealActivity">
+                android:parentActivityName=".CreateMealsActivity.CreateMealActivity"
+                android:screenOrientation="portrait">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="elevizion.cookitrite.com.CreateMealsActivity.CreateMealActivity"/>
