@@ -1,30 +1,30 @@
 package elevizion.cookitrite.com.Enities
 
-import java.util.ArrayList
-
 class Recipe {
-    internal lateinit var mealName: String
-    internal lateinit var username:String
 
-    constructor(mealName: String, username: String) {
+
+    var mealId: String = ""
+    var mealName: String = ""
+    var ingredients: String = ""
+    var method: String = ""
+    lateinit var username:String
+
+    constructor(mealId: String, mealName: String, ingredients: String, method: String) {
+        this.mealId = mealId
         this.mealName = mealName
-        this.username = username
+        this.ingredients = ingredients
+        this.method = method
     }
 
-    fun getMealName(): String {
-        return mealName
+    constructor(mealId: String) {
+        this.mealId = mealId
     }
-
+    constructor(mealName: String,username: String) {
+        this.mealName=mealName
+        this.username=username
+    }
     fun getUserName(): String {
         return username
-    }
-
-    fun setMealName(mealName: String) {
-        this.mealName = mealName
-    }
-
-    fun setUserName(username: String) {
-        this.username = username
     }
 
 

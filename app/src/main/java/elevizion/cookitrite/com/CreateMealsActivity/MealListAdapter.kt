@@ -27,7 +27,7 @@ class MealListAdapter (val items : ArrayList<Recipe>) : RecyclerView.Adapter<Vie
     // Binds each recipe in the ArrayList to a view
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         p0.creator.text = items.get(p1).getUserName()
-        p0.recipeName.text = items.get(p1).getMealName()
+        p0.recipeName.text = items.get(p1).mealName
     }
 
 }

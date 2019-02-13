@@ -49,6 +49,9 @@
     <string name="username">Username</string>
     <string name="listed_recipes_for_user">Listed Recipes For User</string>
     <string name="title_activity_ingredients__methods">Enter Ingredients and Methods</string>
+    <string name="save_recipe">Save Recipe</string>
+    <string name="enter_ingredients">Enter Ingredients</string>
+    <string name="enter_methods">Enter Methods</string>
 
     <string-array name="Measure_type">
         <item>cup</item>
@@ -62,4 +65,5 @@
         <item>tsp</item>
         <item>tbsp</item>
     </string-array>
+    <string name="title_activity_view_meal">ViewMealActivity</string>
 </resources>
