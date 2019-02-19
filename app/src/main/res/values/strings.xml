@@ -66,4 +66,5 @@
         <item>tbsp</item>
     </string-array>
     <string name="title_activity_view_meal">ViewMealActivity</string>
+    <string name="title_activity_view_recipe">ViewRecipeActivity</string>
 </resources>

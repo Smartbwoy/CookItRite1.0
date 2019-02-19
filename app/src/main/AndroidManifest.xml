@@ -24,6 +24,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:name=".ViewRecipeActivity"
+                android:label="@string/title_activity_view_recipe"
+                android:parentActivityName=".ProfileActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="elevizion.cookitrite.com.ProfileActivity"/>
+        </activity>
+        <activity
                 android:name=".CreateMealsActivity.ViewMealActivity"
                 android:label="@string/title_activity_view_meal"
                 android:parentActivityName=".ProfileActivity"

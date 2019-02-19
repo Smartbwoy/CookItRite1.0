@@ -13,7 +13,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val intent = Intent(this, CreateMealActivity::class.java)
+        //val intent = Intent(this, CreateMealActivity::class.java)
+        val intent=Intent(this,ViewRecipeActivity::class.java)
         startActivity(intent)
         finish()
         //setContentView(R.layout.activity_splashscreen)
